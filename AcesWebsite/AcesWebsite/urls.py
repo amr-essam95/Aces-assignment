@@ -1,0 +1,9 @@
+
+from django.conf.urls import url,include
+from django.contrib import admin
+
+urlpatterns = [
+    url(r'',include('aces.urls')),
+    url(r'^admin/', admin.site.urls),
+    url(r'^aces/',include('aces.urls')),
+]
