@@ -1,0 +1,57 @@
+<head>
+	<title >Aces</title>
+	<style type="text/css">
+
+
+	#outheader
+	{
+		height: 15%;
+
+    color: white;
+    background-color: green;
+    clear: left;
+    text-align: center;
+	}
+	</style>
+</head>
+
+
+<header id="outheader">
+
+	<h1>Aces</h1>
+</header>
+
+
+{% block body %}
+
+<div >
+
+    <div >
+        <div>
+            <div>
+                <div >
+                    <h3>Register for an Account</h3>
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+                    <form  role="form" action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% include 'aces/form_template.html' %}
+                        <div >
+                            <div >
+                                <button type="submit" >Submit</button><br>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            <br>
+                <div >
+                    Already have an account? <a href="{% url 'aces:login_user' %}">Click here</a> to log in.
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,75 @@
+<head>
+	<title >Aces</title>
+	<style type="text/css">
+
+	div.container{
+		width: 100%;
+		height: 100%;
+
+	}
+	#outheader
+	{
+		height: 15%;
+
+    color: white;
+    background-color: green;
+    clear: left;
+    text-align: center;
+	}
+	section{
+
+				float:left;
+
+	}
+	#sec1
+	{
+		width: 50%;
+		height: 85%;
+		background-color: white;
+	}
+	#sec2
+	{
+		width: 50%;
+		height: 85%;
+		background-color: white;
+	}
+	#inheader
+	{
+		text-align: center;
+		height:15%;
+		background-color: white;
+
+	}
+	#h-1
+	{
+		text-align: center;
+		background-color: white;
+
+	}
+	form
+	{
+		text-align: center;
+	}
+
+
+
+	</style>
+</head>
+<form action="{%  url 'aces:index'%}" method="post">
+    {% csrf_token %}
+    <table>
+    <tr></tr><td> Date :</td>
+        <td>
+        <select name="dropdown1">
+            {%  for d in Slot%}
+                <option value="{{ d.date }}">{{ d.date }}</option>
+            {% endfor %}
+            </select>
+        </td>
+<td><input type="submit" value="submitdate"/></td></tr>
+
+
+
+    </table>
+
+
